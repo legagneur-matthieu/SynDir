@@ -38,7 +38,7 @@ cela signifie que si un fichier est supprimé dans un dossier source, </br>
 il ne le sera pas dans le dossier de destination.</br>
 
 Pour désactiver le safemode (et donc synchroniser les suppressions) :</br>
-rendez vous dans "engine/SynDir.cli.php" et a la fin du fichier (ligne 159), remplacez</br>
+rendez vous dans "engine/SynDir.cli.php" et a la fin du fichier (ligne 160), remplacez</br>
 "new SynDirCli($safemode = true);" </br>
 par</br>
 "new SynDirCli($safemode = false);"
