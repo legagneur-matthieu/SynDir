@@ -42,6 +42,7 @@ class SynDirCli {
                 "log" => ""
             ];
             foreach ($SynDir["directories"] as $dirs) {
+                cli::write("{$dirs[0]} -> {$dirs[1]}\n");
                 cli::write("Parcours des dossiers :\n");
                 $this->set_file_list($dirs);
                 cli::rewrite("Ok");
