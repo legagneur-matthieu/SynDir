@@ -30,9 +30,9 @@ class SynDirCli {
      * @param boolean $safemode si false : les ficher supprimé en source le seront aussi en destination
      */
     public function __construct($safemode = true) {
-        include_once __DIR__.'/cli.class.php';
+        include_once __DIR__ . '/cli.class.php';
         while (true) {
-            $SynDir = json_decode(file_get_contents(__DIR__."/../config/SynDir.json"), true);
+            $SynDir = json_decode(file_get_contents(__DIR__ . "/../config/SynDir.json"), true);
             $this_files = [];
             $this_stat = [
                 "A" => 0,
@@ -55,6 +55,7 @@ class SynDirCli {
                     cli::rewrite("Suppressions termiées");
                 }
                 $this->get_stat();
+                $this_files = [];
             }
             ($SynDir["interval"] >= 0 ? cli::wait($SynDir["interval"]) : exit());
         }
@@ -104,8 +105,8 @@ class SynDirCli {
         $date = new DateTime();
         $datenow = $date->format($format = "YmdHis");
         $datem1m = $date->sub(new DateInterval("P1M"));
-        file_put_contents(__DIR__."/../logs/$datenow.log", $log . $this->_stat["log"]);
-        foreach (glob(__DIR__."/../logs/*.log") as $log) {
+        file_put_contents(__DIR__ . "/../logs/$datenow.log", $log . $this->_stat["log"]);
+        foreach (glob(__DIR__ . "/../logs/*.log") as $log) {
             if ((int) basename($log, ".log") < $datem1m->format($format)) {
                 unlink($log);
             }
