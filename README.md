@@ -20,7 +20,7 @@ laissez a -1 si vous désirez que la synchronisation ne s'effectue qu'une fois
 exemple (avec un chemin windows et un chemin linux)
 <pre>
 "directories": [
-    ["C:\\users\\username\Documents", "D:\\Documents"],
+    ["C:\\users\\username\\Documents", "D:\\Documents"],
     ["/home/username/Documents", "/media/username/HDD/Documents"]
 ]
 </pre>
